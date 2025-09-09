@@ -65,7 +65,7 @@ if 'selected_hotel_id' not in st.session_state:
 # Theo cách cho người dùng chọn khách sạn từ dropdown
 # Tạo một tuple cho mỗi khách sạn, trong đó phần tử đầu là tên và phần tử thứ hai là ID
 hotel_options = [(row['Hotel_Name'], row['Hotel_ID']) for index, row in st.session_state.random_hotels.iterrows()]
-st.session_state.random_hotels
+# st.session_state.random_hotels
 # Tạo một dropdown với options là các tuple này
 selected_hotel = st.selectbox(
     "Chọn khách sạn",
@@ -97,4 +97,5 @@ if st.session_state.selected_hotel_id:
         display_recommended_hotels(recommendations, cols=3)
     else:
         st.write(f"Không tìm thấy khách sạn với ID: {st.session_state.selected_hotel_id}")
+
 
