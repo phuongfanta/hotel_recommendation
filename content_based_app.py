@@ -54,7 +54,8 @@ with open('cosine_sim.pkl', 'rb') as f:
     cosine_sim_new = pickle.load(f)
 
 ###### Giao diện Streamlit ######
-st.image('hotel.jpg', use_column_width=True)
+#st.image('hotel.jpg', use_column_width=True)
+st.image("hotel.jpg", use_container_width=True)
 
 # Kiểm tra xem 'selected_hotel_id' đã có trong session_state hay chưa
 if 'selected_hotel_id' not in st.session_state:
@@ -96,3 +97,4 @@ if st.session_state.selected_hotel_id:
         display_recommended_hotels(recommendations, cols=3)
     else:
         st.write(f"Không tìm thấy khách sạn với ID: {st.session_state.selected_hotel_id}")
+
